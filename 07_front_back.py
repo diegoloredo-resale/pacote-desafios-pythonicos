@@ -10,9 +10,18 @@ Exemplo: 'abcde', a metade da frente é 'abc' e a de trás é 'de'.
 Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
+
+def get_first_half_position(s):
+    position = int(len(s) / 2)
+    return position + 1 if len(s) % 2 else position
+
+
 def front_back(a, b):
-    # +++ SUA SOLUÇÃO +++
-    return
+    a_position = get_first_half_position(a)
+    a_frente, a_traz = a[:a_position], a[a_position:]
+    b_position = get_first_half_position(b)
+    b_frente, b_traz = b[:b_position], b[b_position:]
+    return f'{a_frente}{b_frente}{a_traz}{b_traz}'
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

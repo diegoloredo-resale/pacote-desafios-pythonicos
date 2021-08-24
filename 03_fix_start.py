@@ -12,10 +12,21 @@ Assuma que a string tem tamanho 1 ou maior.
 Dica: s.replace(stra, strb) retorna uma versão da string s
 onde todas as instancias de stra foram substituidas por strb.
 """
-
+# S.1
 def fix_start(s):
-    # +++ SUA SOLUÇÃO +++
-    return
+    if s is str:
+        first_char = s[0]
+        s = first_char + s[1:].replace(s[0], "*")
+    return s
+
+
+# S.2
+def fix_start(s):
+    return "%s%s" % (s[0], s[1:].replace(s[0], "*"))
+
+
+# S.3
+fix_start = lambda s: "%s%s" % (s[0], s[1:].replace(s[0], "*"))
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

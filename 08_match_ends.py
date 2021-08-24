@@ -9,8 +9,19 @@ PS: Python não possui o operador ++, porém += funciona.
 """
 
 def match_ends(words):
-    # +++ SUA SOLUÇÃO +++
-    return
+    count = 0
+    for w in words:
+        if len(w) >= 2 and w[0] == w[-1]:
+            count += 1
+    return count
+
+
+def match_ends(words):
+    result = [1 for w in words if len(w) >= 2 and w[0] == w[-1]]
+    return len(result)
+
+
+match_ends = lambda words: sum([1 for w in words if len(w) >= 2 and w[0] == w[-1]])
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

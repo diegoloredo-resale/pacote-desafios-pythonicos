@@ -12,8 +12,13 @@ antes de combina-las.
 """
 
 def front_x(words):
-    # +++ SUA SOLUÇÃO +++
-    return
+    x_words = sorted([w for w in words if w[0] == 'x'])
+    not_x_words = sorted([w for w in words if not w[0] == 'x'])
+    return x_words + not_x_words
+
+
+def front_x(words):
+    return sorted(words, key=lambda w: w if w.startswith('x') else "z%s" % w)
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

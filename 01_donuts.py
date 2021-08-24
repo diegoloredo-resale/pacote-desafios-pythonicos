@@ -9,9 +9,13 @@ Exemplo: donuts(5) retorna 'Number of donuts: 5'
 e donuts(23) retorna 'Number of donuts: many'
 """
 
+# Simple
 def donuts(count):
-    # +++ SUA SOLUÇÃO +++
-    return
+    n_donuts = count if count < 10 else "many"
+    return "Number of donuts: %s" % n_donuts
+
+# Reduced
+donuts = lambda i: "Number of donuts: " + (str(i) if i < 10 else "many")
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
